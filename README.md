@@ -2,6 +2,11 @@
 ---
 
 > **Motivation** <br />
+
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
 Every programmer knows that staring a new project means spending lot of time to create boilerplates and setting up you project.This script helps you to spend less time on performing redundent tasks and focus on the task which is much more important. <br>
 The commands help you to create *react* as well as *MERN* stack projects with just one command.
 
@@ -12,20 +17,23 @@ The commands help you to create *react* as well as *MERN* stack projects with ju
 
 > **Steps to sucessfully run the script**  
 1. Clone this repository <br />
-    ```
+    ```git
     git clone https://github.com/VVB2/React-Project-Maker
     ```
 
 2. Install all the packages <br />
-    ```
+    ```python
     pip install -r requirements.txt
     ```
 
 3. Run any one of the commands <br />
-    ```
+   *For client boilerplate*
+    ```python
     python boilerplate-maker.py client [OPTIONS] NAME
     ``` 
-    ```
+
+    *For MERN boilerplate*
+    ```python
     python boilerplate-maker.py clientserver [OPTIONS] NAME
     ```
 
@@ -39,7 +47,8 @@ The commands help you to create *react* as well as *MERN* stack projects with ju
 
 > **Note** <br />
 - *The NAME is required to run the script for both client and server commands* 
-- *In the **clientserver** command the default packages installed are **express mongoose dotenv mongo-sanitize** and **nodemon** as dev-dependencies
+- *To install multiple dependencies seperate each dependency with **--c** tag*
+- *In the **clientserver** command the default packages installed are **express mongoose dotenv mongo-sanitize** and **nodemon** as dev-dependencies*
 
 > **The folder structure generated is as follows**
 - For client
