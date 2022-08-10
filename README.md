@@ -2,11 +2,6 @@
 ---
 
 > **Motivation** <br />
-
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
 Every programmer knows that staring a new project means spending lot of time to create boilerplates and setting up you project.This script helps you to spend less time on performing redundent tasks and focus on the task which is much more important. <br>
 The commands help you to create *react* as well as *MERN* stack projects with just one command.
 
@@ -37,13 +32,16 @@ The commands help you to create *react* as well as *MERN* stack projects with ju
     python boilerplate-maker.py clientserver [OPTIONS] NAME
     ```
 
-> **OPTIONS**
-- For client and clientserver
-    ```
-    --c TEXT Enter the packages that you need to install for client.
-    --location Enter the location you want the project to install. [default: .]
-    --help Help about this command
-    ```
+> **OPTIONS** 
+- List of **OPTIONS**
+
+    | OPTION      | Description | REQUIRED      |
+    | :---        |    :----   |          :---: |
+    | name      | Name of the folder for client/clientserver       | [✔️]   |
+    | --c   | Enter the packages that you need to install.        | [❌]      |
+    | --location   | Enter the location you want the project to install. [default: os.getcwd()]        | [❌]      |
+    | --help   | Show this message and exit.        | [❌]      |
+
 
 > **Note** <br />
 - *The NAME is required to run the script for both client and server commands* 
