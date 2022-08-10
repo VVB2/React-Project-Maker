@@ -38,16 +38,19 @@ ReactDOM.render(<App />,document.getElementById('root'));
     index_file.close()
 
 @app.command()
-def client(name: str, p: Optional[List[str]] = typer.Option([], help="Enter the packages that you need to install."),location: Optional[str] = typer.Option('.', help="Enter the location you want the project to install.")):
+def client(name: str, c: Optional[List[str]] = typer.Option([], help="Enter the packages that you need to install."),location: Optional[str] = typer.Option('.', help="Enter the location you want the project to install.")):
     os.system('cls')
-    loc = f'{location}\{name}'
+    if location != '.':
+        loc = f'{location}\{name}'
+    else:
+        loc = f'{os.getcwd()}\{name}'
     os.chdir(f'{location}')
     os.system(f'npx create-react-app {name}')
     shutil.rmtree(f'{loc}\src', ignore_errors=False, onerror=None)
     os.mkdir(f'{loc}\src')
     react_maker(loc, False)
     os.chdir(f'{name}')
-    for package in p:
+    for package in c:
         os.system('cls')
         print(f'installing [green]{package}[/green]')
         os.system(f'npm install {package}')
@@ -57,7 +60,10 @@ def client(name: str, p: Optional[List[str]] = typer.Option([], help="Enter the 
 @app.command()
 def clientServer(name: str, c: Optional[List[str]] = typer.Option([], help="Enter the packages that you need to install for client."),location: Optional[str] = typer.Option('.', help="Enter the location you want the project to install.")):
     os.system('cls')
-    loc = f'{location}\{name}'
+    if location != '.':
+        loc = f'{location}\{name}'
+    else:
+        loc = f'{os.getcwd()}\{name}'
     os.mkdir(f'{loc}')
     os.chdir(f'{loc}')
     os.system(f'npx create-react-app client')
